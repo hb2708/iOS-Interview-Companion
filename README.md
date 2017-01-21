@@ -68,7 +68,6 @@ __OR__
 What are the different app states?
 
 __A5:__
-
 * __Not running:__ The app has not been launched or was running but was terminated by the system.
 
 * __Inactive:__ The app is running in the foreground but is currently not receiving events. (It may be executing other code though.) An app usually stays in this state only briefly as it transitions to a different state.
@@ -79,10 +78,54 @@ __A5:__
 
 * __Suspended:__ The app is in the background but is not executing code. The system moves apps to this state automatically and does not notify them before doing so. While suspended, an app remains in memory but does not execute any code. When a low-memory condition occurs, the system may purge suspended apps without notice to make more space for the foreground app.
 
+__Q6:__
+What is a category and when is it used?
 
+__A6:__
+A category is a way of adding additional methods to a class without extending it. It is often used to add a collection of related methods. A common use case is to add additional methods to built in classes in the Cocoa frameworks. For example adding async download methods to the ```UIImage``` class.
 
+__Q7:__
+Can you spot the bug in the following code and suggest how to fix it?
 
+```objective-c
+@interface MyCustomController : UIViewController  
 
+@property (strong, nonatomic) UILabel *alert;  
+
+@end  
+
+@implementation MyCustomController  
+
+- (void)viewDidLoad {
+     CGRect frame = CGRectMake(100, 100, 100, 50);
+     self.alert = [[UILabel alloc] initWithFrame:frame];
+     self.alert.text = @"Please wait...";
+     [self.view addSubview:self.alert];
+      dispatch_async(
+        dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+        ^{
+           sleep(10);
+           self.alert.text = @"Waiting over";
+        }
+    ); 
+}  
+
+@end  
+```
+
+__A6:__
+All UI updates must be done on the ___main thread___. In the code above the update to the alert text may or may not happen on the main thread, since the global dispatch queue makes no guarantees . Therefore the code should be modified to always run the UI update on the main thread
+
+```objective-c
+dispatch_async(		
+    dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+    ^{
+      sleep(10);
+      dispatch_async(dispatch_get_main_queue(), ^{
+         self.alert.text = @"Waiting over";
+      });
+}); 
+```
 
 # References
 
