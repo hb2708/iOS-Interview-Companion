@@ -6,13 +6,13 @@ Form the [References](#references) listed at bottom of file.
   
   __Objective-C__
   
-  ```
+  ```objective-c
   - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
   ```
   
   __Swift__
   
-  ```
+  ```swift
   init(style: UITableViewCellStyle, reuseIdentifier: String?)
   ```
   
@@ -33,6 +33,32 @@ Explain the difference between copy and retain?
 __A:__
 Retaining an object means the retain count increases by one. This means the instance of the object will be kept in memory until it’s retain count drops to zero. The property will store a reference to this instance and will share the same instance with anyone else who retained it too. Copy means the object will be cloned with duplicate values. It is not shared with any one else.
 
+__Q4:__
+What is method swizzling in Objective C and why would you use it?
+
+__A:__
+Method swizzling allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table. Swizzling allows you to write code that can be executed before and/or after the original method. For example perhaps to track the time method execution took, or to insert log statements
+
+```objective-c
+#import "UIViewController+Log.h"
+@implementation UIViewController (Log)
+    + (void)load {
+        static dispatch_once_t once_token;
+        dispatch_once(&once_token,  ^{
+            SEL viewWillAppearSelector = @selector(viewDidAppear:);
+            SEL viewWillAppearLoggerSelector = @selector(log_viewDidAppear:);
+            Method originalMethod = class_getInstanceMethod(self, viewWillAppearSelector);
+            Method extendedMethod = class_getInstanceMethod(self, viewWillAppearLoggerSelector);
+            method_exchangeImplementations(originalMethod, extendedMethod);
+        });
+    }
+    - (void) log_viewDidAppear:(BOOL)animated {
+        [self log_viewDidAppear:animated];
+        NSLog(@"viewDidAppear executed for %@", [self class]);
+    }
+@end
+
+```
 
 
 
