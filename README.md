@@ -15,12 +15,17 @@ Form the [References](#references) listed at bottom of file.
   ```
   init(style: UITableViewCellStyle, reuseIdentifier: String?)
   ```
+  
   What is the ```reuseIdentifier``` used for?
   
   __A:__
   The ```reuseIdentifier``` is used to indicate that a cell can be re-used in a ```UITableView```. For example when the cell looks the same, but has different content. The ```UITableView``` will maintain an internal cache of ```UITableViewCell```’s with the ```reuseIdentifier``` and allow them to be re-used when ```dequeueReusableCellWithIdentifier:``` is called. By re-using table cell’s the scroll performance of the tableview is better because new views do not need to be created.
   
 __Q2:__
+Explain the difference between atomic and nonatomic synthesized properties?
+
+__A:__
+Atomic and non-atomic refers to whether the setters/getters for a property will atomically read and write values to the property. When the atomic keyword is used on a property, any access to it will be “synchronized”. Therefore a call to the getter will be guaranteed to return a valid value, however this does come with a small performance penalty. Hence in some situations nonatomic is used to provide faster access to a property, but there is a chance of a race condition causing the property to be nil under rare circumstances (when a value is being set from another thread and the old value was released from memory but the new value hasn’t yet been fully assigned to the location in memory for the property).
 
 
 
