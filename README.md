@@ -1,5 +1,5 @@
 # Questions and answers 
-## Form the [References](#references) listed at bottom of file.
+Form the [References](#references) listed at bottom of file.
 
 1. 
 
