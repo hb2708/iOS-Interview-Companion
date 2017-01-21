@@ -5,11 +5,13 @@ Form the [References](#references) listed at bottom of file.
   On a UITableViewCell constructor:
   
   __Objective-C__
-  ```Objective-C
+  
+  ```objective-c
   - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
   ```
   
   __Swift__
+  
   ```Swift
   init(style: UITableViewCellStyle, reuseIdentifier: String?)
   ```
