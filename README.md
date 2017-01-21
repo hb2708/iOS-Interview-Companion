@@ -62,7 +62,9 @@ Method swizzling allows the implementation of an existing selector to be switche
 
 __Q5:__
 What’s the difference between not-running, inactive, active, background and suspended execution states?
+
 __OR__
+
 What are the different app states?
 
 __A5:__
