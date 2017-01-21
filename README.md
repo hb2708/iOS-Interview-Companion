@@ -113,7 +113,7 @@ Can you spot the bug in the following code and suggest how to fix it?
 @end  
 ```
 
-__A6:__
+__A7:__
 All UI updates must be done on the ___main thread___. In the code above the update to the alert text may or may not happen on the main thread, since the global dispatch queue makes no guarantees . Therefore the code should be modified to always run the UI update on the main thread
 
 ```objective-c
