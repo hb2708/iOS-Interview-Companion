@@ -127,6 +127,41 @@ dispatch_async(
 }); 
 ```
 
+__Q8:__
+What is the difference between ```viewDidLoad``` and ```viewDidAppear```? Which should you use to load data from a remote server to display in the view?
+
+__A8:__
+```viewDidLoad``` is called when the view is loaded, whether from a Xib file, storyboard or programmatically created in ```loadView```. ```viewDidAppear``` is called every time the view is presented on the device. Which to use depends on the use case for your data. If the data is fairly static and not likely to change then it can be loaded in ```viewDidLoad``` and cached. However if the data changes regularly then using ```viewDidAppear``` to load it is better. In both situations, the data should be loaded asynchronously on a background thread to avoid blocking the UI.
+
+__Q9:__
+What considerations do you need when writing a ```UITableViewController``` which shows images downloaded from a remote server?
+
+__A9:__
+This is a very common task in iOS and a good answer here can cover a whole host of knowledge. The important piece of information in the question is that the images are hosted remotely and they may take time to download, therefore when it asks for “considerations”, you should be talking about:
+
+* Only download the image when the cell is scrolled into view, i.e. when ```cellForRowAtIndexPath``` is called.
+* Downloading the image asynchronously on a background thread so as not to block the UI so the user can keep scrolling.
+* When the image has downloaded for a cell we need to check if that cell is still in the view or whether it has been re-used by another piece of data. If it’s been re-used then we should discard the image, otherwise we need to switch back to the main thread to change the image on the cell.
+
+Other good answers will go on to talk about offline caching of the images, using placeholder images while the images are being downloaded.
+
+__Q10:__
+What is a protocol, how do you define your own and when is it used?
+
+__A10:__
+A protocol is similar to an interface from Java. It defines a list of required and optional methods that a class must/can implement if it adopts the protocol. Any class can implement a protocol and other classes can then send messages to that class based on the protocol methods without it knowing the type of the class.
+
+```
+@protocol MyCustomDataSource
+- (NSUInteger)numberOfRecords;
+- (NSDictionary *)recordAtIndex:(NSUInteger)index;
+@optional
+- (NSString *)titleForRecordAtIndex:(NSUInteger)index;
+@end
+```
+
+A common use case is providing a DataSource for ```UITableView``` or ```UICollectionView```.
+
 # References
 
 In no perticular order
