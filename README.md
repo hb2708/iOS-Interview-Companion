@@ -275,11 +275,39 @@ If you get the opportunity to draw this one out, it's worth doing to impress the
 
 ![alt text](./Images/iOS_and_OSX_responder_chain_2x.png "Responder Chain")
 
+---
+__Q15:__
+__What's the difference between using a *delegate* and *notification*?__
 
+__A15:__
+Both are used for sending values and messages to interested parties. A delegate is for one-to-one communication and is a pattern promoted by Apple. In delegation the class raising events will have a property for the delegate and will typically expect it to implement some `protocol`. The delegating class can then call the _delegate_s protocol methods.
 
+Notification allows a class to broadcast events across the entire application to any interested parties. The broadcasting class doesn't need to know anything about the listeners for this event, therefore notification is very useful in helping to decouple components in an application.
 
+```
+[NSNotificationCenter defaultCenter] 
+        postNotificationName:@"TestNotification" 
+        object:self];
+```
 
+---
+__Q16:__
+__What's your preference when writing UI's? Xib files, Storyboards or programmatic `UIView`?__
 
+__A16:__
+There's no right or wrong answer to this, but it's great way of seeing if you understand the benefits and challenges with each approach. Here's the common answers I hear:
+
+* Storyboard's and Xib's are great for quickly producing UI's that match a design spec. They are also really easy for product managers to visually see how far along a screen is.
+
+* Storyboard's are also great at representing a flow through an application and allowing a high-level visualization of an entire application.
+
+* Storyboard's drawbacks are that in a team environment they are difficult to work on collaboratively because they're a single file and merge's become difficult to manage.
+
+* Storyboards and Xib files can also suffer from duplication and become difficult to update. For example if all button's need to look identical and suddenly need a color change, then it can be a long/difficult process to do this across storyboards and xibs.
+
+* Programmatically constructing UIView's can be verbose and tedious, but it can allow for greater control and also easier separation and sharing of code. They can also be more easily unit tested.
+
+Most developers will propose a combination of all 3 where it makes sense to share code, then re-usable `UIViews` or `Xib` files.
 
 
 
