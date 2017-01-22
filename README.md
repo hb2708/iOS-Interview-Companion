@@ -68,6 +68,7 @@ __OR__
 What are the different app states?
 
 __A5:__
+
 * __Not running:__ The app has not been launched or was running but was terminated by the system.
 
 * __Inactive:__ The app is running in the foreground but is currently not receiving events. (It may be executing other code though.) An app usually stays in this state only briefly as it transitions to a different state.
@@ -151,7 +152,7 @@ What is a protocol, how do you define your own and when is it used?
 __A10:__
 A protocol is similar to an interface from Java. It defines a list of required and optional methods that a class must/can implement if it adopts the protocol. Any class can implement a protocol and other classes can then send messages to that class based on the protocol methods without it knowing the type of the class.
 
-```
+```objective-c
 @protocol MyCustomDataSource
 - (NSUInteger)numberOfRecords;
 - (NSDictionary *)recordAtIndex:(NSUInteger)index;
