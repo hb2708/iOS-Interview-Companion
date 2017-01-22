@@ -175,6 +175,67 @@ A protocol is similar to an interface from Java. It defines a list of required a
 A common use case is providing a DataSource for `UITableView` or `UICollectionView`.
 
 ---
+__Q11:__
+What is KVC and KVO? Give an example of using KVC to set a value.
+
+__A11:__
+*KVC* stands for *Key-Value Coding*. It's a mechanism by which an object's properties can be accessed using string's at runtime rather than having to statically know the property names at development time. *KVO* stands for *Key-Value Observing* and allows a controller or class to observe changes to a property value.
+
+Let's say there is a property name on a class:
+
+```
+@property (nonatomic, copy) NSString *name;
+```
+
+We can access it using KVC:
+
+```
+NSString *n = [object valueForKey:@"name"]
+```
+
+And we can modify it's value by sending it the message:
+
+```
+[object setValue:@"Mary" forKey:@"name"]
+```
+
+---
+__Q12:__
+What are blocks and how are they used?
+
+__A12:__
+Blocks are a way of defining a single task or unit of behavior without having to write an entire Objective-C class. Under the covers Blocks are still Objective C objects. They are a language level feature that allow programming techniques like lambdas and closures to be supported in Objective-C. Creating a block is done using the `^ { }` syntax:
+
+```
+ myBlock = ^{
+    NSLog(@"This is a block");
+ }
+ ```
+
+It can be invoked like so:
+
+```
+myBlock();
+```
+
+It is essentially a function pointer which also has a signature that can be used to enforce type safety at compile and runtime. For example you can pass a block with a specific signature to a method like so:
+
+```
+- (void)callMyBlock:(void (^)(void))callbackBlock;
+```
+
+If you wanted the block to be given some data you can change the signature to include them:
+
+```
+- (void)callMyBlock:(void (^)(double, double))block {
+    ...
+    block(3.0, 2.0);
+}
+```
+
+
+
+---
 # References
 
 In no perticular order
