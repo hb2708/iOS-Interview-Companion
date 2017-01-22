@@ -341,9 +341,9 @@ __A18:__
 
 Some of the pitfalls that people hit are bloated `UIViewController` and not separating out code into classes beyond the MVC format. I'd highly recommend reading up on some solutions to this:
 
-* <https://www.objc.io/issues/1-view-controllers/lighter-view-controllers/>
-* <https://speakerdeck.com/trianglecocoa/unburdened-viewcontrollers-by-jay-thrash>
-* <https://programmers.stackexchange.com/questions/177668/how-to-avoid-big-and-clumsy-uitableviewcontroller-on-ios>
+* [https://www.objc.io/issues/1-view-controllers/lighter-view-controllers/](https://www.objc.io/issues/1-view-controllers/lighter-view-controllers/)
+* [https://speakerdeck.com/trianglecocoa/unburdened-viewcontrollers-by-jay-thrash](https://speakerdeck.com/trianglecocoa/unburdened-viewcontrollers-by-jay-thrash)
+* [https://programmers.stackexchange.com/questions/177668/how-to-avoid-big-and-clumsy-uitableviewcontroller-on-ios](https://programmers.stackexchange.com/questions/177668/how-to-avoid-big-and-clumsy-uitableviewcontroller-on-ios)
 
 In terms of alternatives, this is pretty open ended. The most common alternative is MVVM using ReactiveCocoa, but others include VIPER and using Functional Reactive code.
 
