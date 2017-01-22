@@ -305,9 +305,9 @@ There's no right or wrong answer to this, but it's great way of seeing if you un
 
 * Storyboards and Xib files can also suffer from duplication and become difficult to update. For example if all button's need to look identical and suddenly need a color change, then it can be a long/difficult process to do this across storyboards and xibs.
 
-* Programmatically constructing UIView's can be verbose and tedious, but it can allow for greater control and also easier separation and sharing of code. They can also be more easily unit tested.
+* Programmatically constructing `UIView`'s can be verbose and tedious, but it can allow for greater control and also easier separation and sharing of code. They can also be more easily unit tested.
 
-Most developers will propose a combination of all 3 where it makes sense to share code, then re-usable `UIViews` or `Xib` files.
+Most developers will propose a combination of all 3 where it makes sense to share code, then re-usable `UIView`'s or `Xib` files.
 
 
 
