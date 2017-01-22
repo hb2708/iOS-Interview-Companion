@@ -234,6 +234,7 @@ __Q13:__
 __What mechanisms does iOS provide to support multi-threading?__
 
 __A13:__
+When an event happens in a view, for example a touch event, the view will fire the event to a chain of UIResponder objects associated with the UIView. The first UIResponder is the UIView itself, if it does not handle the event then it continues up the chain to until UIResponder handles the event. The chain will include UIViewControllers, parent UIViews and their associated UIViewControllers, if none of those handle the event then the UIWindow is asked if it can handle it and finally if that doesn't handle the event then the UIApplicationDelegate is asked.
 
 * `NSThread` creates a new low-level thread which can be started by calling the `start` method.
 
@@ -264,9 +265,26 @@ dispatch_async(myQueue, ^{
 ```
 
 ---
-# References
+__Q14:__
+__What is the Responder Chain?__
 
-In no perticular order
+__A14:__
+When an event happens in a view, for example a touch event, the view will fire the event to a chain of `UIResponder` objects associated with the `UIView`. The first `UIResponder` is the `UIView` itself, if it does not handle the event then it continues up the chain to until `UIResponder` handles the event. The chain will include `UIViewController`'s, parent `UIView`'s and their associated `UIViewController`'s, if none of those handle the event then the `UIWindow` is asked if it can handle it and finally if that doesn't handle the event then the `UIApplicationDelegate` is asked.
+
+If you get the opportunity to draw this one out, it's worth doing to impress the interviewer:
+
+![alt text](./Images/iOS_and_OSX_responder_chain_2x.png "Responder Chain")
+
+
+
+
+
+
+
+
+
+---
+# References
 
 1. [Codemoderator](https://www.codementor.io/ios/tutorial/ios-interview-tips-questions-answers-objective-c "Codemoderator")
 
