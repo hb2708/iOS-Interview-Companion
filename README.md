@@ -4,7 +4,7 @@
 
 ---
   __Q1:__
-  On a UITableViewCell constructor:
+  __On a UITableViewCell constructor:__
   
   __Objective-C__
   
@@ -25,21 +25,21 @@
   
 ---
 __Q2:__
-Explain the difference between atomic and nonatomic synthesized properties?
+__Explain the difference between atomic and nonatomic synthesized properties?__
 
 __A2:__
 Atomic and non-atomic refers to whether the setters/getters for a property will atomically read and write values to the property. When the atomic keyword is used on a property, any access to it will be “synchronized”. Therefore a call to the getter will be guaranteed to return a valid value, however this does come with a small performance penalty. Hence in some situations nonatomic is used to provide faster access to a property, but there is a chance of a race condition causing the property to be nil under rare circumstances (when a value is being set from another thread and the old value was released from memory but the new value hasn’t yet been fully assigned to the location in memory for the property).
 
 ---
 __Q3:__
-Explain the difference between copy and retain?
+__Explain the difference between copy and retain?__
 
 __A3:__
 Retaining an object means the retain count increases by one. This means the instance of the object will be kept in memory until it’s retain count drops to zero. The property will store a reference to this instance and will share the same instance with anyone else who retained it too. Copy means the object will be cloned with duplicate values. It is not shared with any one else.
 
 ---
 __Q4:__
-What is method swizzling in Objective C and why would you use it?
+__What is method swizzling in Objective C and why would you use it?__
 
 __A4:__
 Method swizzling allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table. Swizzling allows you to write code that can be executed before and/or after the original method. For example perhaps to track the time method execution took, or to insert log statements
@@ -67,11 +67,11 @@ Method swizzling allows the implementation of an existing selector to be switche
 
 ---
 __Q5:__
-What’s the difference between not-running, inactive, active, background and suspended execution states?
+__What’s the difference between not-running, inactive, active, background and suspended execution states?__
 
 __OR__
 
-What are the different app states?
+__What are the different app states?__
 
 __A5:__
 
@@ -87,14 +87,14 @@ __A5:__
 
 ---
 __Q6:__
-What is a category and when is it used?
+__What is a category and when is it used?__
 
 __A6:__
 A category is a way of adding additional methods to a class without extending it. It is often used to add a collection of related methods. A common use case is to add additional methods to built in classes in the Cocoa frameworks. For example adding async download methods to the `UIImage` class.
 
 ---
 __Q7:__
-Can you spot the bug in the following code and suggest how to fix it?
+__Can you spot the bug in the following code and suggest how to fix it?__
 
 ```
 @interface MyCustomController : UIViewController  
@@ -138,14 +138,14 @@ dispatch_async(
 
 ---
 __Q8:__
-What is the difference between `viewDidLoad` and `viewDidAppear`? Which should you use to load data from a remote server to display in the view?
+__What is the difference between `viewDidLoad` and `viewDidAppear`? Which should you use to load data from a remote server to display in the view?__
 
 __A8:__
 `viewDidLoad` is called when the view is loaded, whether from a Xib file, storyboard or programmatically created in `loadView`. `viewDidAppear` is called every time the view is presented on the device. Which to use depends on the use case for your data. If the data is fairly static and not likely to change then it can be loaded in `viewDidLoad` and cached. However if the data changes regularly then using `viewDidAppear` to load it is better. In both situations, the data should be loaded asynchronously on a background thread to avoid blocking the UI.
 
 ---
 __Q9:__
-What considerations do you need when writing a `UITableViewController` which shows images downloaded from a remote server?
+__What considerations do you need when writing a `UITableViewController` which shows images downloaded from a remote server?__
 
 __A9:__
 This is a very common task in iOS and a good answer here can cover a whole host of knowledge. The important piece of information in the question is that the images are hosted remotely and they may take time to download, therefore when it asks for “considerations”, you should be talking about:
@@ -158,7 +158,7 @@ Other good answers will go on to talk about offline caching of the images, using
 
 ---
 __Q10:__
-What is a protocol, how do you define your own and when is it used?
+__What is a protocol, how do you define your own and when is it used?__
 
 __A10:__
 A protocol is similar to an interface from Java. It defines a list of required and optional methods that a class must/can implement if it adopts the protocol. Any class can implement a protocol and other classes can then send messages to that class based on the protocol methods without it knowing the type of the class.
@@ -176,7 +176,7 @@ A common use case is providing a DataSource for `UITableView` or `UICollectionVi
 
 ---
 __Q11:__
-What is KVC and KVO? Give an example of using KVC to set a value.
+__What is KVC and KVO? Give an example of using KVC to set a value.__
 
 __A11:__
 *KVC* stands for *Key-Value Coding*. It's a mechanism by which an object's properties can be accessed using string's at runtime rather than having to statically know the property names at development time. *KVO* stands for *Key-Value Observing* and allows a controller or class to observe changes to a property value.
@@ -201,7 +201,7 @@ And we can modify it's value by sending it the message:
 
 ---
 __Q12:__
-What are blocks and how are they used?
+__What are blocks and how are they used?__
 
 __A12:__
 Blocks are a way of defining a single task or unit of behavior without having to write an entire Objective-C class. Under the covers Blocks are still Objective C objects. They are a language level feature that allow programming techniques like lambdas and closures to be supported in Objective-C. Creating a block is done using the `^ { }` syntax:
@@ -231,7 +231,7 @@ If you wanted the block to be given some data you can change the signature to in
 
 ---
 __Q13:__
-What mechanisms does iOS provide to support multi-threading?
+__What mechanisms does iOS provide to support multi-threading?__
 
 __A13:__
 
