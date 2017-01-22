@@ -210,10 +210,9 @@ Blocks are a way of defining a single task or unit of behavior without having to
  myBlock = ^{
     NSLog(@"This is a block");
  }
- ```
+```
 
 It can be invoked like so:
-
 
 ```
 myBlock();
