@@ -229,7 +229,39 @@ If you wanted the block to be given some data you can change the signature to in
 }
 ```
 
+---
+__Q13:__
+What mechanisms does iOS provide to support multi-threading?
 
+__A13:__
+
+* `NSThread` creates a new low-level thread which can be started by calling the `start` method.
+
+```
+NSThread* myThread = [[NSThread alloc] initWithTarget:self
+                                        selector:@selector(myThreadMainMethod:)
+                                        object:nil];
+[myThread start]; 
+```
+
+* `NSOperationQueue` allows a pool of threads to be created and used to execute `NSOperations` in parallel. `NSOperations` can also be run on the main thread by asking `NSOperationQueue` for the `mainQueue`.
+
+```
+NSOperationQueue* myQueue = [[NSOperationQueue alloc] init];
+[myQueue addOperation:anOperation]; 
+[myQueue addOperationWithBlock:^{
+   /* Do something. */
+}];
+```
+
+* *GCD* or *Grand Central Dispatch* is a modern feature of Objective-C that provides a rich set of methods and API's to use in order to support common multi-threading tasks. GCD provides a way to queue tasks for dispatch on either the main thread, a concurrent queue (tasks are run in parallel) or a serial queue (tasks are run in FIFO order).
+
+```
+dispatch_queue_t myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+dispatch_async(myQueue, ^{
+    printf("Do some work here.\n");
+});
+```
 
 ---
 # References
