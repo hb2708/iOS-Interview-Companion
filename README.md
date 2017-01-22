@@ -16,10 +16,10 @@ Form the [References](#references) listed at bottom of file.
   init(style: UITableViewCellStyle, reuseIdentifier: String?)
   ```
   
-  What is the ```reuseIdentifier``` used for?
+  What is the `reuseIdentifier` used for?
   
   __A1:__
-  The ```reuseIdentifier``` is used to indicate that a cell can be re-used in a ```UITableView```. For example when the cell looks the same, but has different content. The ```UITableView``` will maintain an internal cache of ```UITableViewCell```’s with the ```reuseIdentifier``` and allow them to be re-used when ```dequeueReusableCellWithIdentifier:``` is called. By re-using table cell’s the scroll performance of the tableview is better because new views do not need to be created.
+  The `reuseIdentifier` is used to indicate that a cell can be re-used in a `UITableView`. For example when the cell looks the same, but has different content. The `UITableView` will maintain an internal cache of `UITableViewCell`’s with the `reuseIdentifier` and allow them to be re-used when `dequeueReusableCellWithIdentifier:` is called. By re-using table cell’s the scroll performance of the tableview is better because new views do not need to be created.
   
 __Q2:__
 Explain the difference between atomic and nonatomic synthesized properties?
@@ -83,7 +83,7 @@ __Q6:__
 What is a category and when is it used?
 
 __A6:__
-A category is a way of adding additional methods to a class without extending it. It is often used to add a collection of related methods. A common use case is to add additional methods to built in classes in the Cocoa frameworks. For example adding async download methods to the ```UIImage``` class.
+A category is a way of adding additional methods to a class without extending it. It is often used to add a collection of related methods. A common use case is to add additional methods to built in classes in the Cocoa frameworks. For example adding async download methods to the `UIImage` class.
 
 __Q7:__
 Can you spot the bug in the following code and suggest how to fix it?
@@ -129,18 +129,18 @@ dispatch_async(
 ```
 
 __Q8:__
-What is the difference between ```viewDidLoad``` and ```viewDidAppear```? Which should you use to load data from a remote server to display in the view?
+What is the difference between `viewDidLoad` and `viewDidAppear`? Which should you use to load data from a remote server to display in the view?
 
 __A8:__
-```viewDidLoad``` is called when the view is loaded, whether from a Xib file, storyboard or programmatically created in ```loadView```. ```viewDidAppear``` is called every time the view is presented on the device. Which to use depends on the use case for your data. If the data is fairly static and not likely to change then it can be loaded in ```viewDidLoad``` and cached. However if the data changes regularly then using ```viewDidAppear``` to load it is better. In both situations, the data should be loaded asynchronously on a background thread to avoid blocking the UI.
+`viewDidLoad` is called when the view is loaded, whether from a Xib file, storyboard or programmatically created in `loadView`. `viewDidAppear` is called every time the view is presented on the device. Which to use depends on the use case for your data. If the data is fairly static and not likely to change then it can be loaded in `viewDidLoad` and cached. However if the data changes regularly then using `viewDidAppear` to load it is better. In both situations, the data should be loaded asynchronously on a background thread to avoid blocking the UI.
 
 __Q9:__
-What considerations do you need when writing a ```UITableViewController``` which shows images downloaded from a remote server?
+What considerations do you need when writing a `UITableViewController` which shows images downloaded from a remote server?
 
 __A9:__
 This is a very common task in iOS and a good answer here can cover a whole host of knowledge. The important piece of information in the question is that the images are hosted remotely and they may take time to download, therefore when it asks for “considerations”, you should be talking about:
 
-* Only download the image when the cell is scrolled into view, i.e. when ```cellForRowAtIndexPath``` is called.
+* Only download the image when the cell is scrolled into view, i.e. when `cellForRowAtIndexPath` is called.
 * Downloading the image asynchronously on a background thread so as not to block the UI so the user can keep scrolling.
 * When the image has downloaded for a cell we need to check if that cell is still in the view or whether it has been re-used by another piece of data. If it’s been re-used then we should discard the image, otherwise we need to switch back to the main thread to change the image on the cell.
 
@@ -161,7 +161,7 @@ A protocol is similar to an interface from Java. It defines a list of required a
 @end
 ```
 
-A common use case is providing a DataSource for ```UITableView``` or ```UICollectionView```.
+A common use case is providing a DataSource for `UITableView` or `UICollectionView`.
 
 # References
 
