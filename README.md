@@ -212,11 +212,7 @@ Blocks are a way of defining a single task or unit of behavior without having to
  }
 ```
 
-It can be invoked like so:
-
-```
-myBlock();
-```
+It can be invoked like so: ``` myBlock(); ```
 
 It is essentially a function pointer which also has a signature that can be used to enforce type safety at compile and runtime. For example you can pass a block with a specific signature to a method like so:
 
