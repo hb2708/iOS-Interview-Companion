@@ -6,13 +6,13 @@ Form the [References](#references) listed at bottom of file.
   
   __Objective-C__
   
-  ```objective-c
+  ```
   - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
   ```
   
   __Swift__
   
-  ```swift
+  ```
   init(style: UITableViewCellStyle, reuseIdentifier: String?)
   ```
   
@@ -39,7 +39,7 @@ What is method swizzling in Objective C and why would you use it?
 __A4:__
 Method swizzling allows the implementation of an existing selector to be switched at runtime for a different implementation in a classes dispatch table. Swizzling allows you to write code that can be executed before and/or after the original method. For example perhaps to track the time method execution took, or to insert log statements
 
-```objective-c
+```
 #import "UIViewController+Log.h"
 @implementation UIViewController (Log)
     + (void)load {
@@ -88,7 +88,7 @@ A category is a way of adding additional methods to a class without extending it
 __Q7:__
 Can you spot the bug in the following code and suggest how to fix it?
 
-```objective-c
+```
 @interface MyCustomController : UIViewController  
 
 @property (strong, nonatomic) UILabel *alert;  
@@ -117,7 +117,7 @@ Can you spot the bug in the following code and suggest how to fix it?
 __A7:__
 All UI updates must be done on the ___main thread___. In the code above the update to the alert text may or may not happen on the main thread, since the global dispatch queue makes no guarantees . Therefore the code should be modified to always run the UI update on the main thread
 
-```objective-c
+```
 dispatch_async(		
     dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
     ^{
@@ -152,7 +152,7 @@ What is a protocol, how do you define your own and when is it used?
 __A10:__
 A protocol is similar to an interface from Java. It defines a list of required and optional methods that a class must/can implement if it adopts the protocol. Any class can implement a protocol and other classes can then send messages to that class based on the protocol methods without it knowing the type of the class.
 
-```objective-c
+```
 @protocol MyCustomDataSource
 - (NSUInteger)numberOfRecords;
 - (NSDictionary *)recordAtIndex:(NSUInteger)index;
