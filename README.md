@@ -309,6 +309,28 @@ There's no right or wrong answer to this, but it's great way of seeing if you un
 
 Most developers will propose a combination of all 3 where it makes sense to share code, then re-usable `UIView`'s or `Xib` files.
 
+---
+__Q17:__
+__How would you securely store private user data offline on a device? What other security best practices should be taken?__
+
+__A17:__
+Again there is no right answer to this, but it's a great way to see how much a person has dug into iOS security. If you're interviewing with a bank I'd almost definitely expect someone to know something about it, but all companies need to take security seriously, so here's the ideal list of topics I'd expect to hear in an answer:
+
+* If the data is extremely sensitive then it should never be stored offline on the device because all devices are crackable.
+
+* The keychain is one option for storing data securely. However it's encryption is based on the pin code of the device. User's are not forced to set a pin, so in some situations the data may not even be encrypted. In addition the users pin code may be easily hacked.
+
+* A better solution is to use something like [SQLCipher](https://www.zetetic.net/sqlcipher/ "SQLCipher") which is a fully encrypted SQLite database. The encryption key can be enforced by the application and separate from the user's pin code.
+
+Other security best practices are:
+
+* Only communicate with remote servers over SSL/HTTPS.
+
+* If possible implement certificate pinning in the application to prevent man-in-the-middle attacks on public WiFi.
+    
+* Clear sensitive data out of memory by overwriting it.
+
+* Ensure all validation of data being submitted is also run on the server side.
 
 
 ---
