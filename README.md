@@ -332,6 +332,50 @@ Other security best practices are:
 
 * Ensure all validation of data being submitted is also run on the server side.
 
+---
+__Q18:__
+__What is MVC? How is it implemented in iOS? What are some pitfalls you've experienced with it? Are there any alternatives to MVC?__
+
+__A18:__
+*MVC* stands for *Model, View, Controller*. It is a design pattern that defines how to separate out logic when implementing user interfaces. In iOS, Apple provides `UIView` as a base class for all View's, `UIViewController` is provided to support the Controller which can listen to events in a View and update the View when data changes. The Model represents data in an application and can be implemented using any `NSObject`, including data collections like `NSArray` and `NSDictionary`.
+
+Some of the pitfalls that people hit are bloated `UIViewController` and not separating out code into classes beyond the MVC format. I'd highly recommend reading up on some solutions to this:
+
+* https://www.objc.io/issues/1-view-controllers/lighter-view-controllers/
+* https://speakerdeck.com/trianglecocoa/unburdened-viewcontrollers-by-jay-thrash
+* https://programmers.stackexchange.com/questions/177668/how-to-avoid-big-and-clumsy-uitableviewcontroller-on-ios
+
+In terms of alternatives, this is pretty open ended. The most common alternative is MVVM using ReactiveCocoa, but others include VIPER and using Functional Reactive code.
+
+---
+__Q19:__
+__A product manager in your company reports that the application is crashing. What do you do?__
+
+__A19:__
+This is a great question in any programming language and is really designed to see how you problem solve. You're not given much information, but some interviews will slip you more details of the issue as you go along. Start simple:
+
+* Get the exact steps to reproduce it.
+* Find out the device, iOS version.
+* Do they have the latest version?
+* Get device logs if possible.
+
+Once you can reproduce it or have more information then start using tooling. Let's say it crashes because of a memory leak, I'd expect to see someone suggest using Instruments leak tool. A really impressive candidate would start talking about writing a unit test that reproduces the issue and debugging through it.
+
+Other variations of this question include slow UI or the application freezing. Again the idea is to see how you problem solve, what tools do you know about that would help and do you know how to use them correctly.
+
+---
+__Q20:__
+__What is AutoLayout? What does it mean when a constraint is "broken" by iOS?__
+
+__A20:__
+AutoLayout is way of laying out `UIView`'s using a set of constraints that specify the location and size based relative to other views or based on explicit values. AutoLayout makes it easier to design screens that resize and layout out their components better based on the size and orientation of a screen. Constraint's include:
+
+
+* Setting the horizontal/vertical distance between 2 views
+* Setting the height/width to be a ratio relative to a different view
+* A width/height/spacing can be an explicit static value
+
+Sometimes constraints conflict with each other. For example imagine a `UIView` which has 2 height constraints: one says make the `UIView` 200px high, and the second says make the height twice the height of a button. If the iOS runtime can not satisfy both of these constraints then it has to pick only one. The other is then reported as being "broken" by iOS.
 
 ---
 # References
