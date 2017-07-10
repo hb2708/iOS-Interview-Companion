@@ -34,3 +34,5 @@ http://nshipster.com/method-swizzling/
 http://www.ongraph.com/blog/whats-the-real-difference-between-swift-2-and-swift-3/
 https://www.hackingwithswift.com/swift3
 https://www.raywenderlich.com/135655/whats-new-swift-3
+
+TDD And CI
