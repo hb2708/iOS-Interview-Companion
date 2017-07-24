@@ -37,4 +37,10 @@ https://www.raywenderlich.com/135655/whats-new-swift-3
 
 https://swiftindia.slack.com/files/rameswar.prasad/F5Y2EENM9/ios_interview_questions.pdf
 
+frame vs bounds.
+
+what is functions,object,class,ARC,lazy,weak,
+@synthesize vs @dynamic
+frame vs bounds
+
 TDD And CI
