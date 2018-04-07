@@ -27,6 +27,24 @@
 * 3rd party library
 
 # Design Patterns/Architecture
+👌 Great lists of iOS interview questions for landing your next job:
+
+🌟 50 iOS Interview Questions & Answers (Part 1): 
+https://goo.gl/96CJcu
+
+🌟 50 iOS Interview Questions & Answers (Part 2):
+https://goo.gl/my8Ly7
+
+🌟 50 iOS Interview Questions & Answers (Part 3):
+https://goo.gl/kWd9X2
+
+🌟 15 iOS Interview Questions For Senior Developers:
+https://goo.gl/2qyaZ8
+
+🌟 GitHub List of iOS Developer & Designer Interview Questions: https://lnkd.in/gYQW_zs
+
+Good luck with the job search!
+
 http://www.tothenew.com/blog/12-key-differences-between-objective-c-and-swift/
 https://redwerk.com/blog/10-differences-objective-c-swift
 
@@ -50,3 +68,4 @@ https://www.raywenderlich.com/135655/whats-new-swift-3
 
 https://swiftindia.slack.com/files/rameswar.prasad/F5Y2EENM9/ios_interview_questions.pdf
 https://www.youtube.com/playlist?list=PL8seg1JPkqgF5wazzCKSq3EEfqt3t8mvA
+
