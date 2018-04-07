@@ -21,6 +21,8 @@
 * @synthesize vs @dynamic
 * TDD And CI
 * memorey leak in closure
+* Favourite apple framework to work with
+* view lifecycle
 
 
 # Design Patterns/Architecture
