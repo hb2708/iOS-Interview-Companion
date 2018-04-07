@@ -1,6 +1,3 @@
-http://www.tothenew.com/blog/12-key-differences-between-objective-c-and-swift/
-https://redwerk.com/blog/10-differences-objective-c-swift
-
 * Closure
 * blocks
 * access specifires
@@ -26,6 +23,9 @@ https://redwerk.com/blog/10-differences-objective-c-swift
 
 
 # Design Patterns/Architecture
+http://www.tothenew.com/blog/12-key-differences-between-objective-c-and-swift/
+https://redwerk.com/blog/10-differences-objective-c-swift
+
 https://github.com/onmyway133/fantastic-ios-architecture
 https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52
 https://code.tutsplus.com/articles/design-patterns-singletons--cms-23886
