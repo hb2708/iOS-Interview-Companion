@@ -23,7 +23,8 @@
 * memorey leak in closure
 * Favourite apple framework to work with
 * view lifecycle
-
+* Testing.
+* 3rd party library
 
 # Design Patterns/Architecture
 http://www.tothenew.com/blog/12-key-differences-between-objective-c-and-swift/
