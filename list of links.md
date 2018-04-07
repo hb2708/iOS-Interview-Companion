@@ -1,28 +1,28 @@
 http://www.tothenew.com/blog/12-key-differences-between-objective-c-and-swift/
 https://redwerk.com/blog/10-differences-objective-c-swift
 
-Closure
-blocks
-access specifires
-pillers of oop
-design pattern ray wenderlitch
-optional binding 
-optional chaining 
-static
-singelton
-Shallow and deep copy
-Overloading
-Overriding
-Operator Overloading
-MVVM
-RXSwift
-git rebase VS merge?
-push notification?
-UNNotificationServiceExtension
-frame vs bounds.
-what is functions,object,class,ARC,lazy,weak,
-@synthesize vs @dynamic
-TDD And CI
+* Closure
+* blocks
+* access specifires
+* pillers of oop
+* design pattern ray wenderlitch
+* optional binding 
+* optional chaining 
+* static
+* singelton
+* Shallow and deep copy
+* Overloading
+* Overriding
+* Operator Overloading
+* MVVM
+* RXSwift
+* git rebase VS merge?
+* push notification?
+* UNNotificationServiceExtension
+* frame vs bounds.
+* what is functions,object,class,ARC,lazy,weak,
+* @synthesize vs @dynamic
+* TDD And CI
 
 
 # Design Patterns/Architecture
