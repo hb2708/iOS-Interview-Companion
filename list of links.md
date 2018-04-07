@@ -14,6 +14,15 @@ Shallow and deep copy
 Overloading
 Overriding
 Operator Overloading
+MVVM
+RXSwift
+git rebase VS merge?
+push notification?
+UNNotificationServiceExtension
+frame vs bounds.
+what is functions,object,class,ARC,lazy,weak,
+@synthesize vs @dynamic
+TDD And CI
 
 
 # Design Patterns/Architecture
@@ -36,11 +45,4 @@ https://www.hackingwithswift.com/swift3
 https://www.raywenderlich.com/135655/whats-new-swift-3
 
 https://swiftindia.slack.com/files/rameswar.prasad/F5Y2EENM9/ios_interview_questions.pdf
-
-frame vs bounds.
-
-what is functions,object,class,ARC,lazy,weak,
-@synthesize vs @dynamic
-frame vs bounds
-
-TDD And CI
+https://www.youtube.com/playlist?list=PL8seg1JPkqgF5wazzCKSq3EEfqt3t8mvA
