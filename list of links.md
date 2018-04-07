@@ -20,6 +20,7 @@
 * what is functions,object,class,ARC,lazy,weak,
 * @synthesize vs @dynamic
 * TDD And CI
+* memorey leak in closure
 
 
 # Design Patterns/Architecture
