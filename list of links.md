@@ -29,14 +29,12 @@
 # Design Patterns/Architecture
 Great lists of iOS interview questions for landing your next job:
 
-50 iOS Interview Questions & Answers (Part 1): 
+50 iOS Interview Questions & Answers (Part 1 to 5): 
 https://goo.gl/96CJcu
 
-50 iOS Interview Questions & Answers (Part 2):
-https://goo.gl/my8Ly7
+http://www.sm-cloud.com/interview-questions-what-are-properties-and-instance-variables-in-objective-c-and-swift/
 
-50 iOS Interview Questions & Answers (Part 3):
-https://goo.gl/kWd9X2
+http://iosinterviewguide.com/?ref=fundamentals-posts
 
 15 iOS Interview Questions For Senior Developers:
 https://goo.gl/2qyaZ8
