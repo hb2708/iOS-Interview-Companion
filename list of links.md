@@ -27,21 +27,21 @@
 * 3rd party library
 
 # Design Patterns/Architecture
-👌 Great lists of iOS interview questions for landing your next job:
+Great lists of iOS interview questions for landing your next job:
 
-🌟 50 iOS Interview Questions & Answers (Part 1): 
+50 iOS Interview Questions & Answers (Part 1): 
 https://goo.gl/96CJcu
 
-🌟 50 iOS Interview Questions & Answers (Part 2):
+50 iOS Interview Questions & Answers (Part 2):
 https://goo.gl/my8Ly7
 
-🌟 50 iOS Interview Questions & Answers (Part 3):
+50 iOS Interview Questions & Answers (Part 3):
 https://goo.gl/kWd9X2
 
-🌟 15 iOS Interview Questions For Senior Developers:
+15 iOS Interview Questions For Senior Developers:
 https://goo.gl/2qyaZ8
 
-🌟 GitHub List of iOS Developer & Designer Interview Questions: https://lnkd.in/gYQW_zs
+GitHub List of iOS Developer & Designer Interview Questions: https://lnkd.in/gYQW_zs
 
 Good luck with the job search!
 
