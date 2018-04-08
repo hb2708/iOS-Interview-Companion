@@ -32,6 +32,8 @@ Great lists of iOS interview questions for landing your next job:
 50 iOS Interview Questions & Answers (Part 1 to 5): 
 https://goo.gl/96CJcu
 
+https://github.com/MaximAbramchuck/awesome-interview-questions#ios
+
 http://www.sm-cloud.com/interview-questions-what-are-properties-and-instance-variables-in-objective-c-and-swift/
 
 http://iosinterviewguide.com/?ref=fundamentals-posts
